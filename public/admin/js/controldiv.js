@@ -82,6 +82,8 @@
     });
   };
 
+  jQuery('#startDate').datetimepicker();
+
 }).call(this);
 
 //# sourceMappingURL=controldiv.js.map

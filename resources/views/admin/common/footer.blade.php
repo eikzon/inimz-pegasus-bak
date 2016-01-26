@@ -9,6 +9,9 @@
 <!-- Custom Theme JavaScript -->
 <script src="{{asset('admin/dist/js/sb-admin-2.js')}}"></script>
 
+<!-- Ui Jquery -->
+<script src="{{asset('admin/js/jquery.datetimepicker.min.js')}}"></script>
+
 <script type="text/javascript">
   var msgConfirmDelete    = '{{ trans('banner_messages.msgConfirmDelete') }}' ;
   var titleErrorAlert     = '{{ trans('banner_messages.alert') }}' ;
@@ -17,12 +20,12 @@
   @if (isset($errorMsg))
       $( window ).load(function() {
         alertMsg('','{{$errorMsg}}');
-      }); 
+      });
   @elseif (count($errors) > 0)
       @foreach ($errors->all(':message<br/>') as $error)
           massageError += '{!! $error !!}' ;
       @endforeach
-      
+
       $( window ).load(function() {
         alertMsg('',massageError);
       });
