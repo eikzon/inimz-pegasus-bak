@@ -82,6 +82,7 @@
     });
   };
 
+<<<<<<< HEAD
   this.ajaxChgStatus = function() {
     $.ajax({
       type: 'POST',
@@ -97,6 +98,8 @@
     });
   };
 
+=======
+>>>>>>> feature_backup
   jQuery('#startDate').datetimepicker();
 
 }).call(this);
