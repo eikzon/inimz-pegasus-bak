@@ -82,6 +82,23 @@
     });
   };
 
+  this.ajaxChgStatus = function() {
+    $.ajax({
+      type: 'POST',
+      url: linkDelete,
+      cache: false,
+      data: '&_method=delete',
+      success: function(msg) {
+        console.log(msg);
+        if (msg === '1') {
+          location.reload();
+        }
+      }
+    });
+  };
+
+  jQuery('#startDate').datetimepicker();
+
 }).call(this);
 
 //# sourceMappingURL=controldiv.js.map

@@ -17,12 +17,12 @@
   @if (isset($errorMsg))
       $( window ).load(function() {
         alertMsg('','{{$errorMsg}}');
-      }); 
+      });
   @elseif (count($errors) > 0)
       @foreach ($errors->all(':message<br/>') as $error)
           massageError += '{!! $error !!}' ;
       @endforeach
-      
+
       $( window ).load(function() {
         alertMsg('',massageError);
       });
