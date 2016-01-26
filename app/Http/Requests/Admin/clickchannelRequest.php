@@ -5,65 +5,67 @@ use App\Http\Requests\Request;
 
 class ClickchannelRequest extends Request
 {
-    /**
-    * DateCreate 2016-01-25
-    * Create By inimz
-    */
+  /**
+  * DateCreate 2016-01-25
+  * Create By inimz
+  */
 
-    /**
-    * Determine if the user is authorized to make this request.
-    *
-    * @return bool
-    */
-    public function authorize()
+  /**
+  * Determine if the user is authorized to make this request.
+  *
+  * @return bool
+  */
+  public function authorize()
+  {
+    return true;
+  }
+
+  /**
+  * Get the validation rules that apply to the request.
+  *
+  * @return array
+  */
+  public function rules()
+  {
+    switch($this->method())
     {
-        return true;
+      case 'GET':
+      case 'DELETE':
+      case 'POST':
+      {
+        return [
+          'name'            => ['required','string'],
+          'link_url'        => ['required', 'string'],
+          'status'          => ['required','integer'],
+        ] ;
+      }
+      case 'PATCH':
+      case 'PUT':
+      {
+        return [
+          'name'            => ['required','string'],
+          'link_url'        => ['required','string'],
+          'status'          => ['required','integer'],
+        ] ;
+      }
+      default:break;
     }
+  }
 
-    /**
-    * Get the validation rules that apply to the request.
-    *
-    * @return array
-    */
-    public function rules()
+  /**
+  * Change Language from user choose.
+  *
+  * @return array
+  */
+  public function messages()
+  {
+    if (in_array($this->session()->get('lang'), Config('admin.listTransLang')))
     {
-        switch($this->method())
-        {
-            case 'GET':
-            case 'DELETE':
-            case 'POST':
-            {
-                return [
-                  'name'         => ['required','string'],
-                  'link_url'     => ['required','string'],
-                  'status'       => ['required','integer'],
-                ] ;
-            }
-            case 'PATCH':
-            case 'PUT':
-            {
-              return [
-                'name'         => ['required','string'],
-                'link_url'     => ['required','string'],
-                'status'       => ['required','integer'],
-              ] ;
-            }
-            default:break;
-        }
+      return [
+        'name.required'       => trans('Admin/text_message.CC_require_name'),
+        'link_url.required'   => trans('Admin/text_message.CC_require_link_url'),
+        'status.required'     => trans('Admin/text_message.CC_require_status')
+      ];
     }
-
-    /**
-    * Change Language from user choose.
-    *
-    * @return array
-    */
-    public function messages()
-    {
-        if (in_array($this->session()->get('lang'), Config('admin.listTransLang')))
-        {
-            return [] ;
-        }
-
-        return [] ;
-    }
+  }
 }
