@@ -6,12 +6,18 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'CreateLocationTable' => $baseDir . '/database/migrations/2016_01_21_051258_CreateLocationTable.php',
+    'ContentSeeder' => $baseDir . '/database/seeds/ContentSeeder.php',
+    'CreateGroupUserTable' => $baseDir . '/database/migrations/2016_01_25_050637_create_group_user_table.php',
+    'CreateImageDescriptionTable' => $baseDir . '/database/migrations/2016_01_25_050608_create_image_description_table.php',
+    'CreateLocationTable' => $baseDir . '/database/migrations/2016_01_25_045611_create_location_table.php',
+    'CreatePageContentTable' => $baseDir . '/database/migrations/2016_01_25_045533_create_page_content_table.php',
+    'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreateShowtimeTable' => $baseDir . '/database/migrations/2016_01_25_045736_create_showtime_table.php',
+    'CreateUsersTable' => $baseDir . '/database/migrations/2016_01_25_050521_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
     'File_Iterator_Factory' => $vendorDir . '/phpunit/php-file-iterator/src/Factory.php',
-    'GolfUser' => $baseDir . '/database/migrations/2016_01_14_071143_golfUser.php',
     'Hamcrest\\Arrays\\IsArray' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',
     'Hamcrest\\Arrays\\IsArrayContaining' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContaining.php',
     'Hamcrest\\Arrays\\IsArrayContainingInAnyOrder' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContainingInAnyOrder.php',
@@ -514,5 +520,6 @@ return array(
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
+    'UserSeeder' => $baseDir . '/database/seeds/UserSeeder.php',
     'test' => $baseDir . '/database/seeds/test.php',
 );

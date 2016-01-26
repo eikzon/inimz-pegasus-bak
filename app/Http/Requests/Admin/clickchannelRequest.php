@@ -33,12 +33,20 @@ class clickchannelRequest extends Request
             case 'DELETE':
             case 'POST':
             {
-                return [] ;
+                return [
+                  'name'         => ['required','alpha_dash'],
+                  'link_url'     => ['required','string'],
+                  'status'       => ['required','integer'],
+                ] ;
             }
-            case 'PUT':
             case 'PATCH':
+            case 'PUT':
             {
-                return [];
+              return [
+                'name'         => ['required','alpha_dash'],
+                'link_url'     => ['required','string'],
+                'status'       => ['required','integer'],
+              ] ;
             }
             default:break;
         }
@@ -51,7 +59,7 @@ class clickchannelRequest extends Request
     */
     public function messages()
     {
-        if (in_array($this->session()->get('lang'), Config('admin.listTransLang'))) 
+        if (in_array($this->session()->get('lang'), Config('admin.listTransLang')))
         {
             return [] ;
         }

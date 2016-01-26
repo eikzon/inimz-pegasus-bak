@@ -1,29 +1,31 @@
-<?php namespace App\Model\Admin;
+<?php
+
+namespace App\Model\Admin;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes ;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Click extends Model {
+class ClickChannel extends Model
+{
+    use SoftDeletes;
 
-	use SoftDeletes;
-	protected $table 		= 'banner_location';
-	protected $dates 		= ['deleted_at'];
-	protected $softDelete 	= true;
-	protected $fillable 	= [
-								'id', 
-								'user_id', 
-								'parent_id',
-								'location_name',
-								'sort_order',
-								'limit',
-								'size_display',
-								'flag_last',
-								'type',
-								'status'
-								];
+    protected $table        = 'page_content';
+    protected $dates        = ['deleted_at'];
+    protected $fillable     = ['location_id','user_id','name','link_url','sort_order','start','end','status'];
+    protected $softDelete   = true;
 
-	public function user()
-	{
-		return $this->belongsTo(User::class, 'user_id');
-	}
+    public function location()
+    {
+        return $this->belongsTo(Location::class, 'location_id');
+    }
+
+    public function showtimes()
+    {
+        return $this->hasMany(Showtime::class, 'page_content_id');
+    }
+
+    public function imageDescription()
+    {
+        return $this->hasOne(ImageDescription::class, 'page_content_id');
+    }
 }

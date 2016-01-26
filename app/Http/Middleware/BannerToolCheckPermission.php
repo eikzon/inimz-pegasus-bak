@@ -45,12 +45,12 @@ class BannerToolCheckPermission
                 App::setLocale( $request->session()->get('lang') );
             }
             else
-            { 
+            {
                 $defaultLanguage = Config::get('admin.defaultLanguage') ;
                 $request->session()->put('lang',$defaultLanguage);
                 App::setLocale($defaultLanguage);
-            }           
-        }       
+            }
+        }
     }
     private function checkLogin( $request ):bool
     {
