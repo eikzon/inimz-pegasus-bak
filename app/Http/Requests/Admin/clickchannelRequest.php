@@ -3,7 +3,7 @@ namespace App\Http\Requests\Admin;
 
 use App\Http\Requests\Request;
 
-class clickchannelRequest extends Request
+class ClickchannelRequest extends Request
 {
     /**
     * DateCreate 2016-01-25

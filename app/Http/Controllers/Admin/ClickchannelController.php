@@ -24,7 +24,7 @@ class ClickchannelController extends Controller
     */
     public function index()
     {
-        $Setdata['data'] = ClickChannel::where(['status' => '1', 'location_id' => 3])->get();
+        $Setdata['data'] = ClickChannel::where(['location_id' => 3])->orderBy('sort_order','desc')->get();
         return View::make($this->default_path.'index', $Setdata) ;
     }
 

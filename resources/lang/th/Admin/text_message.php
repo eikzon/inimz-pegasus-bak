@@ -20,8 +20,6 @@ return [
     'image'             => 'Image',
     'create'            => 'สร้าง',
 
-
-
     // ERROR
     'passwordFail'              => 'รหัสผ่านผิดพลาด',
     'statusUserNoneActive'      => 'ถูกปิดการใช้งาน',
@@ -69,7 +67,11 @@ return [
 
     /* New inimz */
     'groupClickchannel' => 'วิดีโอ',
+    'clickchannel_name' => 'ชื่อวิดีโอ',
     'clickchannel_thumbnail' => 'วิดีโอตัวอย่าง',
+    'clickchannel_sort' => 'เรียงลำดับ',
+    'clickchannel_sort' => '',
+    'CC_status_close' => 'รอแสดง',
     'CC_CreateLocation' => 'สร้างวิดีโอ',
     'CC_VideoName' => 'ชื่อวิดีโอ',
     'CC_VideoUrl' => 'Youtube URL (http://youtube.com/xxxx)',
@@ -77,6 +79,8 @@ return [
     'CC_BT_crate' => 'บันทึก',
     'CC_BT_Reset' => 'ยกเลิก',
     'CC_bt_edit'  => 'แก้ไข',
-    'CC_bt_delete' => 'ลบรายการ'
+    'CC_bt_delete' => 'ลบรายการ',
+    'CC_VideoStart' => 'วันที่เริ่มต้นรายการ',
+    'CC_VideoEnd' => 'วันที่สิ้นสุดรายการ'
 
 ];
