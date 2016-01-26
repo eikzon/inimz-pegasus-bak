@@ -34,7 +34,7 @@ class ClickchannelRequest extends Request
             case 'POST':
             {
                 return [
-                  'name'         => ['required','alpha_dash'],
+                  'name'         => ['required','string'],
                   'link_url'     => ['required','string'],
                   'status'       => ['required','integer'],
                 ] ;
@@ -43,7 +43,7 @@ class ClickchannelRequest extends Request
             case 'PUT':
             {
               return [
-                'name'         => ['required','alpha_dash'],
+                'name'         => ['required','string'],
                 'link_url'     => ['required','string'],
                 'status'       => ['required','integer'],
               ] ;

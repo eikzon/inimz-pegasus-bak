@@ -43,7 +43,9 @@
                             <thead>
                                 <tr>
                                     <th>{{ trans('Admin/text_message.id') }}</th>
+                                    <th>{{ trans('Admin/text_message.clickchannel_name') }}</th>
                                     <th>{{ trans('Admin/text_message.clickchannel_thumbnail') }}</th>
+                                    <th>{{ trans('Admin/text_message.clickchannel_sort') }}</th>
                                     <th>{{ trans('Admin/text_message.status') }}</th>
                                     <th>{{ trans('Admin/text_message.action') }}</th>
                                 </tr>
@@ -51,16 +53,17 @@
                             <tbody>
                             @foreach($data as $key => $val)
                                 <tr>
-                                    <td>{{ $val->id }}</td>
+                                    <td align="center">{{ $val->id }}</td>
+                                    <td align="center">{{ $val->name }}</td>
                                     <td align="center"><embed width="200" height="150" src="{{ $val->link_url }}"></td>
-                                    <td>
+                                    <td align="center">
                                       @if ($val->status == 1)
                                         {{ trans('Admin/text_message.CC_status_open') }}
                                       @else ($val->status == 2)
                                         {{ trans('Admin/text_message.CC_status_close') }}
                                       @endif
                                     </td>
-                                    <td>
+                                    <td align="center">
                                       <a href="{{ action('Admin\ClickchannelController@edit', ['id'=>$val->id]) }}" class="btn btn-default">{{ trans('Admin/text_message.CC_bt_edit') }}</a>
                                       <button onclick="deleteFn('{{ action('Admin\ClickchannelController@destroy',['id'=>$val->id]) }}')" type="reset" class="btn btn-danger">{{ trans('Admin/text_message.CC_bt_delete') }}</button>
                                     </td>

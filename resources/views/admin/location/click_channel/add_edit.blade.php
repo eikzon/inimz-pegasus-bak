@@ -29,18 +29,12 @@
                               <div class="form-group">
                                   <label>{{ trans('Admin/text_message.CC_VideoStart') }}</label>
                                   <input class="form-control datepicker" name="start" value="{{ inputValue('start', $data) }}">
-                                  <div class='input-group date datepicker' >
-                                    <input type='text' class="form-control"  id="datetimepicker3"/>
-                                    <span class="input-group-addon">
-                                        <span class="fa fa-times fa-fw"></span>
-                                    </span>
-                                  </div>
                               </div>
-                              <div class='input-group date' id='startDate'>
+                              <!-- <div class='input-group date' id='startDate'>
                                 <input type='text' class="form-control" name="startDate" />
                                 <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                                 </span>
-                              </div>
+                              </div> -->
                               <div class="form-group">
                                   <label>{{ trans('Admin/text_message.CC_VideoEnd') }}</label>
                                   <input class="form-control datepicker" name="end" value="{{ inputValue('end', $data) }}">
